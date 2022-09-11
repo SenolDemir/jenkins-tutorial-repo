@@ -1,21 +1,11 @@
-
-		pipeline {
-		    agent any
-
+	pipeline {
+		agent any
 		    stages {
-		        stage('Commit') {
+		        stage('run') {
 		            steps {
-		                echo 'Code committed'
-		            }
-		        }
-		        stage('Build') {
-		            steps {
-		                echo 'Building the Code...'
-		            }
-		        }
-		        stage('Test') {
-		            steps {
-		                echo 'Regression tests running...'
+		                echo 'Running Java Code...'
+		                sh 'javac Hello.java'
+		                sh 'java Hello'
 		            }
 		        }
 		    }
