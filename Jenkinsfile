@@ -1,12 +1,22 @@
-pipeline {
-    agent any
-    stages {
-        stage('build') {
-            steps {
-                echo "Pipeline job with Jenkinsfile"
-                sh 'echo using shell within Jenkinsfile'
-                echo 'not using shell in the Jenkinsfile'
-            }
-        }
-    }
-}
+
+		pipeline {
+		    agent any
+
+		    stages {
+		        stage('Commit') {
+		            steps {
+		                echo 'Code committed'
+		            }
+		        }
+		        stage('Build') {
+		            steps {
+		                echo 'Building the Code...'
+		            }
+		        }
+		        stage('Test') {
+		            steps {
+		                echo 'Regression tests running...'
+		            }
+		        }
+		    }
+		}
